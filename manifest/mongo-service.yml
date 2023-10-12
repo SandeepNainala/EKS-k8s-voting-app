@@ -5,14 +5,11 @@ metadata:
   namespace: sandeepnaidu
   labels:
     role: db
-    env : dev
+    env: demo
 spec:
+  ports:
+  - port: 27017
+    targetPort: 27017
+  clusterIP: None
   selector:
     role: db
-  ports:
-    - protocol: TCP
-      port: 27017
-      targetPort: 27017
-    clusterIP: None
-    selector:
-      role: db
